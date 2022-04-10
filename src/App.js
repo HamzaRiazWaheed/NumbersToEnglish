@@ -91,7 +91,7 @@ function App() {
     }
   }
   return (
-    <Wrapper id="root" className="App">
+    <Wrapper className="App">
       <FormWrapper role='input-form' onSubmit={submitForm}>
         <Label htmlFor="input">Add some number</Label>
         <Input required id="input" aria-label="number-input" autoFocus={true} step="any" type="number" max="99999" defaultValue="" ref={inputRef} placeholder="0 - 99999" onInput={validate}/>
@@ -100,7 +100,7 @@ function App() {
           try {
             setLoading(true);
             setEnglishText("");
-            const req = await fetch(`http://localhost:1234/convert?num=${inputRef.current.value}`);
+            const req = await fetch(`https://source-server.herokuapp.com/numtoeng?num=${inputRef.current.value}`);
             const res = await req.json();
             const eng = JSON.parse(res);
             console.log(eng);
