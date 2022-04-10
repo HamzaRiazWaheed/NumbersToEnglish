@@ -17,7 +17,10 @@ You may also see any lint errors in the console.
 ### `npm run serve`
 
 Runs the ExpressJs server.\
-Open [http://localhost:1234/convert?num=100](http://localhost:1234/convert?num=100) to view it in your browser.
+Open [http://localhost:1234/convert?num=100](http://localhost:1234/convert?num=100) to view it in your browser.\
+
+`Remote API`
+Open [https://source-server.herokuapp.com/numtoeng?num=100](https://source-server.herokuapp.com/numtoeng?num=100) to view it in your browser.
 
 ### `npm test`
 
