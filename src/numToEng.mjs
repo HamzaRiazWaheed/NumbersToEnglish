@@ -73,9 +73,9 @@ const isAValidNumber = (number) => !isNaN(Number(number));//number.match(/^\d*$/
  * @returns English represention of numeric value
  */
 const getEnglishString = (number) => {
-  console.log('number: ', number, typeof +number);
+  console.log('number: ', number);
   let digitsByUnits = [];
-  // if(number.startsWith('0'))
+  
   if(Number(number) <= 20) {
     digitsByUnits.push(Number(number));
   } else {
@@ -86,7 +86,7 @@ const getEnglishString = (number) => {
   formatWithSpaces.forEach((m, i) => {
     const units = numToUnits(Number(m).toString());
     console.log('# units: ', i, m, units);
-    // Fixes the 10th division
+    // replace the 10th division
     const lastTwoChar = Number(m.slice(-2));
     if(lastTwoChar <= 20) {
       units.splice(units.length - 2,2,lastTwoChar.toString())
@@ -132,7 +132,7 @@ const convertNumberToEnglish = (number) => {
   } else if(!isNumberInRange(number)) {
     englishString = "Number out of allowed range of 0 and 99999";
   } else {
-    // Split by . or ,
+    // Split by .
     if(number.includes('.')) {
       englishString = number.split('.').map(m => getEnglishString(m)).join(' . ');
     } else {
